@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>شرکت پیشگامان دنیای نوین رایکا | هویت‌سازی، رسانه و برنامه‌نویسی</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vazirmatn@33.0.2/fonts/web/Vazirmatn-font-face.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #060816;
+      --bg-soft: rgba(15, 23, 42, 0.85);
+      --glass: rgba(15, 23, 42, 0.7);
+      --glass-strong: rgba(15, 23, 42, 0.9);
+      --border-subtle: rgba(148, 163, 184, 0.25);
+      --accent: #4f46e5;
+      --accent-strong: #7c3aed;
+      --accent-soft: rgba(79, 70, 229, 0.18);
+      --text-main: #f9fafb;
+      --text-muted: #9ca3af;
+      --shadow-soft: 0 20px 50px rgba(15, 23, 42, 0.8);
+      --radius-lg: 18px;
+      --radius-xl: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at top, #1f2937 0, #020617 55%, #000 100%);
+      color: var(--text-main);
+      font-family: "Vazirmatn", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      overflow-x: hidden;
+    }
+
+    body.lang-en {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .page {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 18px 16px 60px;
+    }
+
+    /* HEADER */
+
+    .site-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .brand-block {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-logo {
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      background: radial-gradient(circle at 20% 20%, #a855f7, #4f46e5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #f9fafb;
+      font-weight: 800;
+      font-size: 20px;
+      box-shadow: 0 0 25px rgba(129, 140, 248, 0.7);
+    }
+
+    .brand-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand-name {
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .brand-tagline {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .pill {
+      padding: 5px 11px;
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      background: rgba(15, 23, 42, 0.7);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      color: var(--text-muted);
+      backdrop-filter: blur(10px);
+    }
+
+    .pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.25);
+    }
+
+    .lang-switch {
+      display: inline-flex;
+      background: rgba(15, 23, 42, 0.8);
+      border-radius: 999px;
+      padding: 3px;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .lang-btn {
+      border: none;
+      background: transparent;
+      padding: 5px 12px;
+      font-size: 11px;
+      color: var(--text-muted);
+      border-radius: 999px;
+      cursor: pointer;
+    }
+
+    .lang-btn.active {
+      background: var(--accent);
+      color: #e5e7eb;
+    }
+
+    /* SECTIONS */
+
+    section {
+      background: var(--glass-strong);
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      box-shadow: var(--shadow-soft);
+      padding: 22px 18px 24px;
+      margin-bottom: 22px;
+    }
+
+    @media (min-width: 900px) {
+      section {
+        padding: 26px 24px 26px;
+      }
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .section-kicker {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent-strong);
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-top: 2px;
+    }
+
+    .section-subtitle {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .section-body {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .two-col {
+      display: grid;
+      gap: 18px;
+    }
+
+    @media (min-width: 900px) {
+      .two-col {
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      }
+    }
+
+    /* HERO */
+
+    #hero {
+      display: grid;
+      gap: 24px;
+    }
+
+    @media (min-width: 960px) {
+      #hero {
+        grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+      }
+    }
+
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .hero-poem {
+      font-size: 13px;
+      line-height: 2;
+      color: #e5e7eb;
+    }
+
+    .hero-title {
+      font-size: 24px;
+      font-weight: 800;
+      line-height: 1.6;
+    }
+
+    .hero-subtitle {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 2px;
+    }
+
+    .tag {
+      font-size: 11px;
+      padding: 6px 11px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      color: var(--text-muted);
+    }
+
+    .hero-actions {
+      margin-top: 4px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .btn-primary {
+      border-radius: 999px;
+      border: none;
+      padding: 7px 16px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+      color: white;
+      box-shadow: 0 14px 32px rgba(79, 70, 229, 0.65);
+    }
+
+    .btn-ghost {
+      border-radius: 999px;
+      padding: 7px 14px;
+      font-size: 11px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.7);
+      color: var(--text-muted);
+    }
+
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .stat-card {
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: 16px;
+      padding: 10px;
+      border: 1px solid rgba(51, 65, 85, 0.9);
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .stat-label {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* HERO RIGHT (CEO) */
+
+    .ceo-block {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      background: radial-gradient(circle at top, rgba(79, 70, 229, 0.5), rgba(15, 23, 42, 0.98));
+      border: 1px solid rgba(129, 140, 248, 0.4);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
+      min-height: 340px;
+    }
+
+    .ceo-img {
+      width: 100%;
+      height: 100%;
+      max-height: 420px;
+      object-fit: cover;
+      display: block;
+      filter: saturate(1.05);
+    }
+
+    .ceo-overlay {
+      position: absolute;
+      inset-inline: 10px;
+      bottom: 10px;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      backdrop-filter: blur(16px);
+    }
+
+    .ceo-name {
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .ceo-role {
+      font-size: 11px;
+      color: #c7d2fe;
+      margin-top: 2px;
+    }
+
+    .ceo-quote {
+      margin-top: 6px;
+      font-size: 11px;
+      color: #e5e7eb;
+    }
+
+    .audio-btn {
+      border: none;
+      background: rgba(15, 23, 42, 0.8);
+      border-radius: 999px;
+      padding: 7px 13px;
+      color: #e5e7eb;
+      font-size: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      margin-top: 6px;
+    }
+
+    .audio-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.25);
+    }
+
+    /* TAG STRIP */
+
+    .tag-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .tag-chip {
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      font-size: 11px;
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--text-muted);
+    }
+
+    /* CARDS */
+
+    .cards-grid {
+      display: grid;
+      gap: 10px;
+    }
+
+    @media (min-width: 780px) {
+      .cards-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .card {
+      border-radius: var(--radius-lg);
+      background: radial-gradient(circle at top left, rgba(79, 70, 229, 0.18), rgba(15, 23, 42, 0.98));
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      padding: 12px 12px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .card-title {
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .card-body {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .card-list {
+      list-style: none;
+      margin-top: 4px;
+      font-size: 11px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      color: var(--text-muted);
+    }
+
+    .card-list li::before {
+      content: "• ";
+      opacity: 0.75;
+    }
+
+    /* TIMELINE */
+
+    .timeline {
+      border-radius: var(--radius-lg);
+      border: 1px dashed rgba(148, 163, 184, 0.6);
+      padding: 10px 12px;
+      background: rgba(15, 23, 42, 0.92);
+      display: grid;
+      gap: 8px;
+      font-size: 12px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 8px;
+      align-items: baseline;
+    }
+
+    .timeline-year {
+      font-size: 11px;
+      font-weight: 700;
+      color: #e5e7eb;
+    }
+
+    .timeline-text {
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* GALLERY */
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    @media (min-width: 720px) {
+      .gallery-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      background: #020617;
+      aspect-ratio: 4 / 3;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.25s ease-out;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-label {
+      position: absolute;
+      inset-inline-start: 6px;
+      bottom: 6px;
+      border-radius: 999px;
+      padding: 2px 8px;
+      font-size: 10px;
+      background: rgba(15, 23, 42, 0.8);
+      color: #e5e7eb;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      backdrop-filter: blur(6px);
+    }
+
+    /* FOOTER / CONTACT */
+
+    .footer {
+      font-size: 11px;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 6px;
+      margin-top: 10px;
+      border-top: 1px solid rgba(30, 41, 59, 0.9);
+      padding-top: 8px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .footer-links span {
+      opacity: 0.9;
+    }
+
+    /* RESPONSIVE HEADER */
+
+    @media (max-width: 640px) {
+      .site-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .header-right {
+        width: 100%;
+        justify-content: space-between;
+      }
+    }
+  </style>
+</head>
+<body class="lang-fa">
+  <!-- موسیقی آرام (مسیر را عوض کن) -->
+  <audio id="bgMusic" src="raika-soft.mp3" loop></audio>
+
+  <div class="page">
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="brand-block">
+        <div class="brand-logo">R</div>
+        <div class="brand-meta">
+          <div class="brand-name" data-i18n="company.name"></div>
+          <div class="brand-tagline" data-i18n="company.tagline"></div>
+        </div>
+      </div>
+
+      <div class="header-right">
+        <div class="pill">
+          <span class="pill-dot"></span>
+          <span data-i18n="company.status"></span>
+        </div>
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="fa">فا</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section id="hero">
+      <div class="hero-text">
+        <p class="hero-poem" data-i18n="poem"></p>
+        <h1 class="hero-title" data-i18n="hero.title"></h1>
+        <p class="hero-subtitle" data-i18n="hero.subtitle"></p>
+
+        <div class="hero-tags">
+          <span class="tag" data-i18n="hero.tag1"></span>
+          <span class="tag" data-i18n="hero.tag2"></span>
+          <span class="tag" data-i18n="hero.tag3"></span>
+        </div>
+
+        <div class="hero-actions">
+          <button class="btn-primary" type="button" data-i18n="hero.cta.primary"></button>
+          <div class="btn-ghost" data-i18n="hero.cta.secondary"></div>
+        </div>
+
+        <div class="stat-row">
+          <div class="stat-card">
+            <div class="stat-value" data-i18n="stats.founded.value"></div>
+            <div class="stat-label" data-i18n="stats.founded.label"></div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" data-i18n="stats.team.value"></div>
+            <div class="stat-label" data-i18n="stats.team.label"></div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" data-i18n="stats.domains.value"></div>
+            <div class="stat-label" data-i18n="stats.domains.label"></div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="ceo-block">
+        <!-- عکس مدیرعامل را اینجا بگذار -->
+        <img class="ceo-img" src="imagesceo.jpg" alt="CEO">
+        <div class="ceo-overlay">
+          <div class="ceo-name" data-i18n="ceo.name"></div>
+          <div class="ceo-role" data-i18n="ceo.role"></div>
+          <p class="ceo-quote" data-i18n="ceo.quote"></p>
+          <button class="audio-btn" id="audioControl" type="button">
+            <span class="audio-dot"></span>
+            <span data-i18n="audio.label.play"></span>
+          </button>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="section-header">
+        <div>
+          <div class="section-kicker" data-i18n="about.kicker"></div>
+          <h2 class="section-title" data-i18n="about.title"></h2>
+        </div>
+        <div class="section-subtitle" data-i18n="about.subtitle"></div>
+      </div>
+
+      <div class="two-col">
+        <div class="section-body">
+          <p data-i18n="about.lead"></p>
+          <p data-i18n="about.story1"></p>
+          <p data-i18n="about.story2"></p>
+          <p data-i18n="about.story3"></p>
+          <div class="tag-strip">
+            <span class="tag-chip" data-i18n="about.tag1"></span>
+            <span class="tag-chip" data-i18n="about.tag2"></span>
+            <span class="tag-chip" data-i18n="about.tag3"></span>
+          </div>
+        </div>
+        <div class="cards-grid">
+          <article class="card">
+            <div class="card-title" data-i18n="domains.identity.title"></div>
+            <div class="card-body" data-i18n="domains.identity.desc"></div>
+            <ul class="card-list" data-i18n-list="domains.identity.items"></ul>
+          </article>
+          <article class="card">
+            <div class="card-title" data-i18n="domains.media.title"></div>
+            <div class="card-body" data-i18n="domains.media.desc"></div>
+            <ul class="card-list" data-i18n-list="domains.media.items"></ul>
+          </article>
+          <article class="card">
+            <div class="card-title" data-i18n="domains.tech.title"></div>
+            <div class="card-body" data-i18n="domains.tech.desc"></div>
+            <ul class="card-list" data-i18n-list="domains.tech.items"></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- JOURNEY -->
+    <section id="journey">
+      <div class="section-header">
+        <div>
+          <div class="section-kicker" data-i18n="journey.kicker"></div>
+          <h2 class="section-title" data-i18n="journey.title"></h2>
+        </div>
+        <div class="section-subtitle" data-i18n="journey.subtitle"></div>
+      </div>
+
+      <div class="two-col">
+        <div class="section-body">
+          <p data-i18n="journey.lead"></p>
+          <p data-i18n="journey.body1"></p>
+          <p data-i18n="journey.body2"></p>
+        </div>
+        <div class="timeline" id="timeline"></div>
+      </div>
+    </section>
+
+    <!-- TEAM -->
+    <section id="team">
+      <div class="section-header">
+        <div>
+          <div class="section-kicker" data-i18n="team.kicker"></div>
+          <h2 class="section-title" data-i18n="team.title"></h2>
+        </div>
+        <div class="section-subtitle" data-i18n="team.subtitle"></div>
+      </div>
+
+      <div class="two-col">
+        <div class="section-body">
+          <p data-i18n="team.overview1"></p>
+          <p data-i18n="team.overview2"></p>
+          <p data-i18n="team.overview3"></p>
+        </div>
+        <div class="cards-grid">
+          <article class="card">
+            <div class="card-title" data-i18n="team.value1.title"></div>
+            <div class="card-body" data-i18n="team.value1.body"></div>
+          </article>
+          <article class="card">
+            <div class="card-title" data-i18n="team.value2.title"></div>
+            <div class="card-body" data-i18n="team.value2.body"></div>
+          </article>
+          <article class="card">
+            <div class="card-title" data-i18n="team.value3.title"></div>
+            <div class="card-body" data-i18n="team.value3.body"></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery">
+      <div class="section-header">
+        <div>
+          <div class="section-kicker" data-i18n="gallery.kicker"></div>
+          <h2 class="section-title" data-i18n="gallery.title"></h2>
+        </div>
+        <div class="section-subtitle" data-i18n="gallery.subtitle"></div>
+      </div>
+
+      <p class="section-body" data-i18n="gallery.lead"></p>
+
+      <div class="gallery-grid">
+        <!-- تصاویر نمونه؛ src را عوض کن -->
+        <figure class="gallery-item">
+          <img src="images/raika-media-1.jpg" alt="Media sample 1">
+          <figcaption class="gallery-label" data-i18n="gallery.label.media"></figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="images/raika-media-2.jpg" alt="Media sample 2">
+          <figcaption class="gallery-label" data-i18n="gallery.label.events"></figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="images/raika-dev-1.jpg" alt="Dev sample">
+          <figcaption class="gallery-label" data-i18n="gallery.label.tech"></figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="images/raika-team-1.jpg" alt="Team">
+          <figcaption class="gallery-label" data-i18n="gallery.label.team"></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="section-header">
+        <div>
+          <div class="section-kicker" data-i18n="contact.kicker"></div>
+          <h2 class="section-title" data-i18n="contact.title"></h2>
+        </div>
+        <div class="section-subtitle" data-i18n="contact.subtitle"></div>
+      </div>
+
+      <div class="section-body">
+        <p data-i18n="contact.lead"></p>
+      </div>
+
+      <div class="footer">
+        <div class="footer-links">
+          <span data-i18n="contact.email"></span>
+          <span data-i18n="contact.phone"></span>
+          <span data-i18n="contact.location"></span>
+        </div>
+        <div data-i18n="contact.footerNote"></div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    /* ========== TEXT CONTENT (FA/EN) – فقط این را ویرایش کن ========== */
+    const content = {
+      fa: {
+        company: {
+          name: "شرکت پیشگامان دنیای نوین رایکا",
+          tagline: "رسانه و برنامه‌نویسی در خدمت هویت‌سازی برند",
+          status: "فعال در دو حوزه رسانه و برنامه‌نویسی با تمرکز بر هویت برند"
+        },
+        poem:
+          "ما از تار و پود روایت آمده‌ایم؛ از روشنای قاب‌ها و منطق کدها؛ رایکا، جایی‌ست که صدا و تصویر، با فکر و فناوری، هویت می‌سازند.",
+        hero: {
+          title: "ساخت هویت حرفه‌ای برای برندها با ترکیب رسانه و برنامه‌نویسی",
+          subtitle:
+            "رایکا در دو حوزه اصلی رسانه و برنامه‌نویسی فعالیت می‌کند؛ دو شاخه‌ای که زیرمجموعه هویت‌سازی و برندسازی هستند. هدف ما، ساختن هویتی منسجم و حرفه‌ای برای برندهاست؛ از تصویر و روایت تا زیرساخت نرم‌افزاری.",
+          tag1: "هویت‌سازی و برندسازی",
+          tag2: "رسانه، گویندگی و تولید محتوا",
+          tag3: "برنامه‌نویسی و راهکارهای دیجیتال",
+          cta: {
+            prry: "مشاهده مسیر و توانمندی‌های رایکا",
+            secondary: "ترکیب رسانه و کد؛ برای ساختن هویت برند شما"
+          }
+        },
+        stats: {
+          founded: {
+            label: "سال تأسیس رسمی",
+            value: "۱۴۰۴"
+          },
+          team: {
+            label: "تعداد نیروهای متخصص",
+            value: "+۲۰"
+          },
+          domains: {
+            label: "حوزه‌های اصلی فعالیت",
+            value: "۲"
+          }
+        },
+        ceo: {
+          name: "محمد صالح نکوئی سامانی",
+          role: "Founder & CEO – Media & Tech Strategist",
+          quote: "ما فقط یک شرکت نمی‌سازیم؛ ما آینده‌ی برندها را معماری می‌کنیم."
+        },
+        audio: {
+          label: {
+            play: "پخش موسیقی آرام",
+            pause: "توقف موسیقی"
+          }
+        },
+        about: {
+          kicker: "ABOUT RAIKA",
+          title: "داستان شکل‌گیری و هویت رایکا",
+          subtitle: "رسانه و برنامه‌نویسی؛ دو شاخه زیر یک درخت به نام برند",
+          lead:
+            "پیشگامان دنیای نوین رایکا نتیجه چهار سال تجربه میدانی در رسانه، آموزش گویندگی، تولید محتوا، پوشش رویدادهای ملی و توسعه نرم‌افزار است؛ مسیری که سه بار با شکست متوقف شد، اما هر بار با ساختاری قوی‌تر و هدفی روشن‌تر دوباره آغاز شد.",
+          story1:
+            "رایکا کار خود را به عنوان یک مجموعه رسانه‌ای در حوزه گویندگی و اجرا شروع کرد. حضور اساتید مطرحی چون جمال‌الدین خدابخش و سرکار خانم علائی، سطح آموزشی مجموعه را به استانداردهای حرفه‌ای رساند و خروجی این دوره‌ها، تربیت گویندگانی بود که امروز در صداوسیما و رسانه‌های رسمی کشور دیده می‌شوند.",
+          story2:
+            "در ادامه، بخش رسانه‌ای رایکا با پروژه‌هایی مثل معرفی غرفه‌های کتاب‌شهر شهرکرد در ایام محرم، پوشش رسانه‌ای رویداد ملی قیام با حضور سردار جعفری، پوشش مسابقات ورزشی دانش‌آموزی، پویش‌ها، گزارش‌های خبری، تولید محتوایی که از شبکه خبر پخش شد و همکاری با دانشگاه اصفهان و مجموعه‌های آموزشی، تبدیل به یک بازوی رسانه‌ای قابل اعتماد شد.",
+          story3:
+            "سپس، با شکل‌گیری تیم برنامه‌نویسی جوان و متخصص و عقد قرارداد نرم‌افزاری با شرکت سنرست (یکی از بزرگ‌ترین تولیدکنندگان پروتز و ارتز کشور با بیش از ۲۵۰ کلینیک طرف قرارداد)، رایکا وارد حوزه راهکارهای دیجیتال شد. امروز، این دو حوزه – رسانه و برنامه‌نویسی – در کنار هم، زیر چتر هویت‌سازی و برندسازی برای مجموعه‌ها فعالیت می‌کنند.",
+          tag1: "هویت‌سازی بر پایه تجربه واقعی",
+          tag2: "رسانه + برنامه‌نویسی = برند",
+          tag3: "تمرکز روی برندهای آینده‌نگر"
+        },
+        domains: {
+          identity: {
+            title: "هویت‌سازی و برندسازی",
+            desc:
+              "هسته اصلی رایکا، طراحی و ساخت هویت برند است؛ جایی که رسانه و برنامه‌نویسی هر دو در خدمت شخصیت و تصویر برند قرار می‌گیرند.",
+            items: [
+              "تعریف هویت و شخصیت برند",
+              "طراحی پیام، لحن و صدای برند",
+              "چیدمان مسیر حضور برند در رسانه",
+              "مشاوره رشد و استراتژی برندسازی"
+            ]
+          },
+          media: {
+            title: "حوزه رسانه و تولید محتوا",
+            desc:
+              "رسانه در رایکا، ابزار اصلی روایت برند است؛ از تصویر و صدا تا پوشش رویداد و تولید محتوای چندرسانه‌ای.",
+            items: [
+              "پوشش رسانه‌ای رویدادهای ملی و استانی",
+              "عکاسی و فیلم‌برداری حرفه‌ای",
+              "تیزر تبلیغاتی و مستند کوتاه",
+              "پادکست، کتاب‌خوانی و گویندگی تخصصی",
+              "گزارش‌سازی خبری و محتوای چندرسانه‌ای"
+            ]
+          },
+          tech: {
+            title: "حوزه برنامه‌نویسی و راهکارهای دیجیتال",
+            desc:
+              "برنامه‌نویسی در رایکا، بازوی تکنیکی هویت برند است؛ زیرساختی که کمک می‌کند برند، در دنیای دیجیتال صحیح و حرفه‌ای دیده شود.",
+            items: [
+              "طراحی و توسعه وب‌سایت شرکتی و تخصصی",
+              "پیاده‌سازی نرم‌افزارها و سیستم‌های اختصاصی",
+              "راهکارهای نرم‌افزاری برای مجموعه‌ها و کلینیک‌ها",
+              "اتوماسیون و دیجیتال‌سازی فرایندهای داخلی برند"
+            ]
+          }
+        },
+        journey: {
+          kicker: "JOURNEY",
+          title: "مسیر رشد رایکا",
+          subtitle: "چهار سال تجربه، سه بار شروع دوباره، یک شرکت متمرکز بر برند",
+          lead:
+            "مسیر رایکا، مسیری کاملاً عملی و میدانی بوده است؛ از استودیوهای کوچک گویندگی و تولید محتوا تا رویدادهای ملی و پروژه‌های نرم‌افزاری بزرگ.",
+          body1:
+            "ترکیب تجربه رسانه‌ای با توان فنی برنامه‌نویسی باعث شد رایکا به جای باقی ماندن در قالب یک گروه رسانه‌ای، تبدیل به یک شرکت چندرشته‌ای شود که می‌تواند از روایت تا زیرساخت، در کنار برندها بایستد.",
+          body2:
+            "امروز رایکا به عنوان نقطه اتصال رسانه، فناوری و هویت برند شناخته می‌شود؛ نقطه‌ای که مجموعه‌ها برای ساختن چهره حرفه‌ای و آینده‌محور خود به آن تکیه می‌کنند.",
+          timeline: [
+            {
+              year: "۱۳۹۹",
+              text: "شروع فعالیت به عنوان مجموعه رسانه‌ای با تمرکز بر گویندگی، اجرا و آموزش زیر نظر اساتید صداوسیما."
+            },
+            {
+              year: "۱۴۰۰",
+              text: "گسترش فعالیت در حوزه رسانه با پوشش رویدادها، تولید گزارش‌ها و همکاری با مجموعه‌های آموزشی و فرهنگی."
+            },
+            {
+              year: "۱۴۰۱",
+              text: "حضور در پروژه‌های ملی، تولید آثار پخش‌شده از شبکه خبر و تکمیل تیم رسانه‌ای حرفه‌ای."
+            },
+            {
+              year: "۱۴۰۲",
+              text: "تشکیل تیم برنامه‌نویسی، عقد قرارداد نرم‌افزاری با شرکت سنرست و ورود رسمی به حوزه راهکارهای دیجیتال."
+            },
+            {
+              year: "۱۴۰۴",
+              text: "ثبت رسمی شرکت پیشگامان دنیای نوین رایکا و فعالیت ساختارمند در دو حوزه رسانه و برنامه‌نویسی با تمرکز بر هویت برند."
+            }
+          ]
+        },
+        team: {
+          kicker: "TEAM & CULTURE",
+          title: "تیم و فرهنگ سازمانی رایکا",
+          subtitle: "۲۰ نیروی جوان، متخصص و انگیزه‌مند",
+          overview1:
+            "رایکا از حدود ۲۰ نیروی جوان، متخصص و باانگیزه تشکیل شده است که در قالب تیم ثابت و همکاری پروژه‌ای فعالیت می‌کنند.",
+          overview2:
+            "هر عضو تیم در حوزه خود حرفه‌ای است؛ از گویندگی، تدوین و تصویربرداری تا برنامه‌نویسی، طراحی وب و استراتژی برند. نقطه مشترک همه، تمایل به یادگیری و آماده بودن برای انجام کارهای بزرگ در سن کم است.",
+          overview3:
+            "فرهنگ سازمانی رایکا روی اعتماد، مسئولیت‌پذیری، رشد مشترک و تمرکز بر نتیجه بنا شده است. هر پروژه، فرصتی برای تقویت هم‌زمان تیم و برند مشتری است.",
+          value1: {
+            title: "حرفه‌ای‌گری در سنین جوانی",
+            body:
+              "اعضای رایکا نشان داده‌اند که سن، محدودیتی برای استاندارد بالا و اجرای حرفه‌ای نیست؛ خروجی‌ها هم‌سطح شرکت‌های باسابقه است."
+          },
+          value2: {
+            title: "رشد مستمر و یادگیری عملی",
+            body:
+              "آموزش، تجربه میدانی و بازخورد مستمر بخشی از ساختار کاری رایکاست؛ رشد فردی و سازمانی به هم گره خورده است."
+          },
+          value3: {
+            title: "اعتماد، شفافیت و تعهد",
+            body:
+              "در رایکا هر همکاری به چشم یک شراکت بلندمدت دیده می‌شود؛ تعهد به کیفیت، زمان‌بندی و نتیجه، اساس رابطه با مشتریان است."
+          }
+        },
+        gallery: {
+          kicker: "PORTFOLIO",
+          title: "نمونه‌ها و لحظه‌های رایکا",
+          subtitle: "از قاب‌های رسانه‌ای تا خطوط کد",
+          lead:
+            "آنچه در گالری می‌بینید تنها بخشی از مسیر رایکاست؛ رویدادها، تولیدات رسانه‌ای، پروژه‌های نرم‌افزاری و لحظه‌هایی از کار تیمی.",
+          label: {
+            media: "پروژه‌های رسانه‌ای",
+            events: "رویدادها و پوشش زنده",
+            tech: "پروژه‌های نرم‌افزاری",
+            team: "تیم رایکا در حال کار"
+          }
+        },
+        contact: {
+          kicker: "CONTACT",
+          title: "ارتباط با رایکا",
+          subtitle: "شروع هویت جدید برند شما از یک گفت‌وگو",
+          lead:
+            "برای مشاوره هویت‌سازی، همکاری رسانه‌ای یا توسعه نرم‌افزار، می‌توانید با ما در تماس باشید. رایکا آماده است تا در کنار شما، هویت حرفه‌ای برندتان را طراحی و تقویت کند.",
+          email: "ایمیل: info@raikaco.ir",
+          phone: "تلفن: ۰۹۱۲۱۲۳۴۵۶۷ (نمونه)",
+          location: "موقعیت: ایران – شهر خود را اینجا بنویسید",
+          footerNote:
+            "این پروفایل آنلاین برای معرفی هویت و توانمندی‌های شرکت پیشگامان دنیای نوین رایکا تهیه شده است."
+        }
+      },
+
+      en: {
+        company: {
+          name: "Raika – Pioneers of the New World",
+          tagline: "Media & Software in service of brand identity",
+          status: "Active in media and software with a brand-focused approach"
+        },
+        poem:
+          "We come from the fabric of stories; from bright frames and logical code. Raika is where sound and image meet strategy and technology to build identity.",
+        hero: {
+          title:
+            "Building professional brand identities through media and software",
+          subtitle:
+            "Raika operates in two main domains: media and software development. Both are branches under our core mission: creating strong, coherent identities for brands – from narrative and visuals to digital infrastructure.",
+          tag1: "Brand identity & strategy",
+          tag2: "Media, voice-over & content",
+          tag3: "Software & digital solutions",
+          cta: {
+            primary: "Explore Raika’s journey & capabilities",
+            secondary: "Media plus code – to shape your brand identity"
+          }
+        },
+        stats: {
+          founded: {
+            label: "Year founded (official)",
+            value: "2025 / ۱۴۰۴"
+          },
+          team: {
+            label: "Specialists",
+            value: "20+"
+          },
+          domains: {
+            label: "Main domains",
+            value: "2"
+          }
+        },
+        ceo: {
+          name: "Mohammad Saleh Nekoei Samani",
+          role: "Founder & CEO – Media & Tech Strategist",
+          quote: "We don’t just build a company; we architect the future of brands."
+        },
+        audio: {
+          label: {
+            play: "Play calm background music",
+            pause: "Pause music"
+          }
+        },
+        about: {
+          kicker: "ABOUT RAIKA",
+          title: "How Raika was formed",
+          subtitle: "Media and software as two branches of one brand tree",
+          lead:
+            "Raika is the result of four years of hands-on work in media, voice-over training, content production, national event coverage and software development – a path with three complete restarts that led to a stronger, more focused company each time.",
+          story1:
+            "We started as a media group focused on voice-over and presentation. Working with well-known national TV presenters raised our standards and allowed us to train talents who later became recognizable voices at provincial and national levels.",
+          story2:
+            "Over time, Raika’s media unit took on projects such as book fair coverage, national events like the ‘Qiam’ conference, sports competitions, campaigns, TV-featured content and collaborations with universities and educational organizations.",
+          story3:
+            "Later, with the formation of a young and talented development team and a software contract with Senrest – one of the largest prosthetics and orthotics producers in the country, working with more than 250 clinics – Raika officially entered the digital solutions space. Today, these two domains, media and software, work together under one mission: building brand identity.",
+          tag1: "Identity built on real-world experience",
+          tag2: "Media + software for brands",
+          tag3: "A future-oriented company identity"
+        },
+        domains: {
+          identity: {
+            title: "Brand identity & positioning",
+            desc:
+              "The core of Raika is brand identity: where both media and software work together to serve a clear, memorable brand personality.",
+            items: [
+              "Defining brand personality and position",
+              "Designing tone of voice and messaging",
+              "Planning media presence for the brand",
+              "Growth and brand development consulting"
+            ]
+          },
+          media: {
+            title: "Media & content",
+            desc:
+              "Media is Raika’s narrative engine; turning messages into stories through sound, image and live coverage.",
+            items: [
+              "Media coverage for national and local events",
+              "Professional photography & videography",
+              "Commercial teasers and short documentaries",
+              "Podcasts, book-reading and voice-over",
+              "Report-style and multimedia content"
+            ]
+          },
+          tech: {
+            title: "Software & digital solutions",
+            desc:
+              "Software is the technical backbone of brand identity at Raika; ensuring brands appear structured and professional in the digital world.",
+            items: [
+              "Corporate & specialized websites",
+              "Custom-built software systems",
+              "Digital solutions for organizations and clinics",
+              "Process automation and internal digitization"
+            ]
+          }
+        },
+        journey: {
+          kicker: "JOURNEY",
+          title: "Raika’s path of growth",
+          subtitle: "Four years of work, three restarts, one brand-centric company",
+          lead:
+            "Raika’s journey has been fully practical – from small voice-over studios to national events and major software deployments.",
+          body1:
+            "By combining media experience with software capabilities, Raika evolved from a simple media group into a multi-disciplinary company that can support brands across narrative, visuals and infrastructure.",
+          body2:
+            "Today, Raika is known as a connection point between media, technology and brand identity for organizations that want a modern, coherent public presence.",
+          timeline: [
+            {
+              year: "2020",
+              text:
+                "Started as a media group focused on voice-over and presentation training with national TV-level mentors."
+            },
+            {
+              year: "2021",
+              text:
+                "Expanded into broader media projects with event coverage, reports and collaborations with educational and cultural organizations."
+            },
+            {
+              year: "2022",
+              text:
+                "Worked on national-level projects, created content featured on national TV and completed a fully professional media team."
+            },
+            {
+              year: "2023",
+              text:
+                "Formed the software team, signed a major software contract with Senrest and officially entered the digital solutions domain."
+            },
+            {
+              year: "2025",
+              text:
+                "Officially registered as Raika – Pioneers of the New World and structured around media and software with a brand-focused mission."
+            }
+          ]
+        },
+        team: {
+          kicker: "TEAM & CULTURE",
+          title: "Team & culture",
+          subtitle: "20 young, skilled and motivated specialists",
+          overview1:
+            "Raika is built around a team of about 20 young specialists working as a core unit and as project collaborators.",
+          overview2:
+            "Each member is highly capable in their field – from voice-over, editing and production to development, web design and brand strategy – while sharing the same drive to build meaningful work at an early age.",
+          overview3:
+            "Our culture is driven by trust, ownership, shared growth and outcome focus. Every project is an opportunity to develop both the team and the client’s brand.",
+          value1: {
+            title: "Professional output at a young age",
+            body:
+              "The team proves that age is not a limit for quality. Our outputs match the standards of more mature companies."
+          },
+          value2: {
+            title: "Continuous learning & real-world practice",
+            body:
+              "Training, field experience and constant feedback are built into how we work. Individual and organizational growth go hand in hand."
+          },
+          value3: {
+            title: "Trust, transparency & commitment",
+            body:
+              "We treat every collaboration as a long-term partnership. Commitment to quality, timing and results is at the center of our relationships."
+          }
+        },
+        gallery: {
+          kicker: "PORTFOLIO",
+          title: "Selected work & moments",
+          subtitle: "From media frames to lines of code",
+          lead:
+            "This gallery is a small window into Raika’s journey: events, media productions, software projects and moments with the team.",
+          label: {
+            media: "Media projects",
+            events: "Events & live coverage",
+            tech: "Software projects",
+            team: "Raika team at work"
+          }
+        },
+        contact: {
+          kicker: "CONTACT",
+          title: "Get in touch",
+          subtitle: "A new brand identity starts with a conversation",
+          lead:
+            "For brand identity consulting, media collaborations or software projects, feel free to reach out. Raika is ready to help you design and strengthen your brand’s presence.",
+          email: "Email: info@raikaco.ir",
+          phone: "Phone: +98 912 123 4567 (sample)",
+          location: "Location: Iran – set your city here",
+          footerNote:
+            "This online profile is prepared to present the identity and capabilities of Raika – Pioneers of the New World."
+        }
+      }
+    };
+
+    /* ========== RENDERING LOGIC ========== */
+
+    function getNested(obj, path) {
+      return path.split(".").reduce((o, k) => (o && o[k] !== undefined ? o[k] : undefined), obj);
+    }
+
+    function renderLanguage(lang) {
+      const dict = content[lang] || content.fa;
+
+      document.body.classList.toggle("lang-fa", lang === "fa");
+      document.body.classList.toggle("lang-en", lang === "en");
+      document.documentElement.lang = lang === "fa" ? "fa" : "en";
+      document.documentElement.dir = lang === "fa" ? "rtl" : "ltr";
+
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.getAttribute("data-i18n");
+        const val = getNested(dict, key);
+        if (typeof val === "string") el.textContent = val;
+      });
+
+      document.querySelectorAll("[data-i18n-list]").forEach((el) => {
+        const key = el.getAttribute("data-i18n-list");
+        const arr = getNested(dict, key);
+        if (Array.isArray(arr)) {
+          el.innerHTML = "";
+          arr.forEach((item) => {
+            const li = document.createElement("li");
+            li.textContent = item;
+            el.appendChild(li);
+          });
+        }
+      });
+
+      // Timeline
+      const tContainer = document.getElementById("timeline");
+      const items = getNested(dict, "journey.timeline");
+      if (tContainer && Array.isArray(items)) {
+        tContainer.innerHTML = "";
+        items.forEach((item) => {
+          const row = document.createElement("div");
+          row.className = "timeline-item";
+
+          const year = document.createElement("div");
+          year.className = "timeline-year";
+          year.textContent = item.year || "";
+
+          const text = document.createElement("div");
+          text.className = "timeline-text";
+          text.textContent = item.text || "";
+
+          row.appendChild(year);
+          row.appendChild(text);
+          tContainer.appendChild(row);
+        });
+      }
+
+      // Audio button label
+      const audioBtn = document.getElementById("audioControl");
+      const audio = document.getElementById("bgMusic");
+      if (audioBtn && audio) {
+        audioBtn.querySelector("span:nth-child(2)").textContent =
+          audio.paused ? getNested(dict, "audio.label.play") : getNested(dict, "audio.label.pause");
+      }
+
+      // Update lang buttons
+      document.querySelectorAll(".lang-btn").forEach((btn) => {
+        btn.classList.toggle("active", btn.getAttribute("data-lang") === lang);
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      // Default language
+      renderLanguage("fa");
+
+      // Language switcher
+      document.querySelectorAll(".lang-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const lang = btn.getAttribute("data-lang");
+          renderLanguage(lang);
+        });
+      });
+
+      // Audio toggle
+      const audio = document.getElementById("bgMusic");
+      const audioBtn = document.getElementById("audioControl");
+      audioBtn.addEventListener("click", () => {
+        const lang = document.body.classList.contains("lang-en") ? "en" : "fa";
+        const dict = content[lang];
+        if (audio.paused) {
+          audio.volume = 0.35;
+          audio.play();
+          audioBtn.querySelector("span:nth-child(2)").textContent = getNested(dict, "audio.label.pause");
+        } else {
+          audio.pause();
+          audioBtn.querySelector("span:nth-child(2)").textContent = getNested(dict, "audio.label.play");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
