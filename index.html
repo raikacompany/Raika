@@ -5,7 +5,7 @@
   <title>شرکت پیشگامان دنیای نوین رایکا | هویت‌سازی، رسانه و برنامه‌نویسی</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- ONLINE FONTS -->
+  <!-- FONTS -->
   <!-- Persian Peyda -->
   <link rel="stylesheet" href="https://cdn.fontcdn.ir/Font/Peyda/Peyda.css" />
   <!-- English Satoshi -->
@@ -41,7 +41,7 @@
       background:
         radial-gradient(circle at top, #1f2937 0, #020617 55%, #000 100%);
       color: var(--text-main);
-      font-family: "Peyda", "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: "Peyda", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       overflow-x: hidden;
     }
 
@@ -275,12 +275,12 @@
     }
 
     .hero-title {
-      font-family: "Peyda", "IRANYekan","Satoshi", sans-serif;
-      font-weight: 800;
-      font-size: 26px;
+      font-family: "Peyda", "Satoshi", sans-serif;
+      font-weight: 900;
+      font-size: 32px;
       line-height: 1.5;
-      letter-spacing: -0.8px;
-      background: linear-gradient(135deg, #a703d8, #8400ff);
+      letter-spacing: -0.6px;
+      background: linear-gradient(135deg, #b26cff, #5e4bef);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       margin-top: 4px;
@@ -373,8 +373,15 @@
       overflow: hidden;
       background: radial-gradient(circle at top, rgba(79, 70, 229, 0.5), rgba(15, 23, 42, 0.98));
       border: 1px solid rgba(129, 140, 248, 0.4);
-      min-height: 280px;
+      min-height: 260px;
       flex: 1;
+    }
+
+    @media (min-width: 960px) {
+      .ceo-block {
+        height: 330px;       /* ثابت برای گیت‌هاب */
+        max-height: 330px;
+      }
     }
 
     .ceo-img {
@@ -598,7 +605,7 @@
   </style>
 </head>
 <body class="lang-fa">
-  <!-- موسیقی آرام (مسیر را عوض کن) -->
+  <!-- موسیقی آرام در ریشه ریپو -->
   <audio id="bgMusic" src="raika-soft.mp3" loop></audio>
 
   <div class="page">
@@ -618,7 +625,7 @@
           <span data-i18n="company.status"></span>
         </div>
 
-        <!-- 🎧 دکمه موسیقی در هدر -->
+        <!-- 🎧 دکمه موسیقی -->
         <button id="audioControl" class="audio-pill" type="button">🎧</button>
 
         <div class="lang-switch">
@@ -669,8 +676,8 @@
 
       <aside class="hero-panel ceo-panel">
         <div class="ceo-block">
-          <!-- عکس مدیرعامل را اینجا بگذار -->
-          <img class="ceo-img" src="imagesceo.jpg" alt="CEO">
+          <!-- عکس مدیرعامل در ریشه ریپو -->
+          <img class="ceo-img" src="ceo.jpg" alt="CEO">
           <div class="ceo-overlay">
             <div class="ceo-name" data-i18n="ceo.name"></div>
             <div class="ceo-role" data-i18n="ceo.role"></div>
@@ -814,7 +821,7 @@
       <p class="section-body" data-i18n="gallery.lead"></p>
 
       <div class="gallery-grid">
-        <!-- تصاویر نمونه؛ src را عوض کن -->
+        <!-- تصاویر در ریشه ریپو -->
         <figure class="gallery-item">
           <img src="raika1.jpg" alt="Media sample 1">
           <figcaption class="gallery-label" data-i18n="gallery.label.media"></figcaption>
@@ -866,7 +873,7 @@
       fa: {
         company: {
           name: "شرکت پیشگامان دنیای نوین رایکا",
-          tagline: "هویت، فقط یک لوگو نیست؛ یک تجربه است. ما آن را می‌سازیم",
+          tagline: "رسانه و برنامه‌نویسی در خدمت هویت‌سازی برند",
           status: "فعال در دو حوزه رسانه و برنامه‌نویسی با تمرکز بر هویت برند"
         },
         poem:
@@ -874,7 +881,7 @@
         hero: {
           title: "رایکا؛ هنر روایت، قدرت تصویر، منطق فناوری",
           subtitle:
-            "در رایکا، هویت هر برند از دل سه جهان شکل می‌گیرد؛ جهان روایت که معنا می‌سازد، جهان تصویر که دیده شدن را ممکن می‌کند، و جهان فناوری که مسیر رشد، ماندگاری و حرفه‌ای دیده شدن را تضمین می‌کند. ما در کنار مجموعه‌ها ایستاده‌ایم تا از ترکیب رسانه و برنامه‌نویسی، هویتی یکپارچه، قابل اعتماد و آینده‌محور برای برندشان خلق کنیم.",
+            "در رایکا، هویت هر برند از دل سه جهان شکل می‌گیرد؛ جهان روایت که معنا می‌سازد، جهان تصویر که دیده‌شدن را ممکن می‌کند، و جهان فناوری که مسیر رشد و ماندگاری و حرفه‌ای دیده شدن را تضمین می‌کند. ما در کنار مجموعه‌ها ایستاده‌ایم تا از ترکیب رسانه و برنامه‌نویسی، هویتی یکپارچه، قابل اعتماد و آینده‌محور برای برندشان خلق کنیم.",
           tag1: "هویت‌سازی و برندسازی",
           tag2: "رسانه، گویندگی و تولید محتوا",
           tag3: "برنامه‌نویسی و راهکارهای دیجیتال",
@@ -896,14 +903,12 @@
             label: "حوزه‌های اصلی فعالیت",
             value: "۲"
           }
-          
         },
-        
         ceo: {
           name: "محمد صالح نکوئی سامانی",
           role: "Founder & CEO – Media & Tech Strategist",
           bio:
-            "من، محمد صالح نکوئی سامانی، به عنوان بنیان‌گذار و مدیرعامل رایکا، مسیر کاری خودم را از دل رسانه آغاز کردم و با ورود به دنیای برنامه‌نویسی ، تلاش کرده‌ام پلی میان روایت، تصویر و کد بسازم. رایکا برای من فقط یک شرکت نیست؛ یک خانه هویت‌سازی است که در آن با کمک تیمی جوان و متخصص، برای برندها آینده‌ای روشن، منسجم و قابل اعتماد طراحی می‌کنیم."
+            "من، محمد صالح نکوئی سامانی، به عنوان بنیان‌گذار و مدیرعامل رایکا، مسیر کاری خودم را از دل رسانه و گویندگی آغاز کردم و با ورود به دنیای برنامه‌نویسی و فناوری تلاش کرده‌ام پلی میان روایت، تصویر و کد بسازم. رایکا برای من فقط یک شرکت نیست؛ یک آزمایشگاه هویت‌سازی است که در آن با کمک تیمی جوان و متخصص، برای برندها آینده‌ای روشن، منسجم و قابل اعتماد طراحی می‌کنیم."
         },
         about: {
           kicker: "ABOUT RAIKA",
@@ -1074,7 +1079,7 @@
         poem:
           "We come from the fabric of stories; from bright frames and logical code. Raika is where sound and image meet strategy and technology to build identity.",
         hero: {
-          title: "Raika — Where Brands Evolve into Identity, Story and Technology.",
+          title: "Raika; The Art of Narrative, The Power of Image, The Logic of Technology",
           subtitle:
             "At Raika, every brand’s identity is forged at the intersection of three worlds: the world of narrative, where meaning is born; the world of imagery, where visibility and emotion take shape; and the world of technology, where growth, precision and long-term impact become possible. We stand beside organizations to craft a unified, trustworthy and future-oriented identity, built through the seamless fusion of media and software.",
           tag1: "Brand identity & strategy",
@@ -1376,4 +1381,5 @@
 </html>
 <!--START---- FormAfzar.Com ----->
 <script type="text/javascript" src="https://formafzar.com/pages/formbuilder/ravesh-formbuilder.js" form-url="https://formafzar.com/form/u2b4c" form-style="fab" form-link-text="مشاهده فرم" form-button-color="#3f51b5" form-button-icon="https://formafzar.com/pages/formbuilder/images/send-icon.png" form-theme=""></script>
+
 <!--END--- FormAfzar.Com ----->
