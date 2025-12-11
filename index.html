@@ -5,9 +5,13 @@
   <title>شرکت پیشگامان دنیای نوین رایکا | هویت‌سازی، رسانه و برنامه‌نویسی</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- FONTS -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/vazirmatn@33.0.2/fonts/web/Vazirmatn-font-face.css" rel="stylesheet">
+  <!-- ONLINE FONTS -->
+  <!-- Persian Peyda -->
+  <link rel="stylesheet" href="https://cdn.fontcdn.ir/Font/Peyda/Peyda.css" />
+  <!-- English Satoshi -->
+  <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/satoshi" />
+  <!-- English Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
 
   <style>
     :root {
@@ -37,12 +41,16 @@
       background:
         radial-gradient(circle at top, #1f2937 0, #020617 55%, #000 100%);
       color: var(--text-main);
-      font-family: "Vazirmatn", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: "Peyda", "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       overflow-x: hidden;
     }
 
+    body.lang-fa {
+      font-family: "Peyda", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
     body.lang-en {
-      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: "Inter", "Satoshi", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
     html {
@@ -126,6 +134,23 @@
       border-radius: 999px;
       background: #22c55e;
       box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.25);
+    }
+
+    .audio-pill {
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      background: rgba(15, 23, 42, 0.65);
+      color: #e2e8f0;
+      padding: 5px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 13px;
+      transition: 0.25s;
+      backdrop-filter: blur(10px);
+    }
+
+    .audio-pill:hover {
+      background: rgba(79, 70, 229, 0.35);
+      color: white;
     }
 
     .lang-switch {
@@ -218,7 +243,8 @@
 
     #hero {
       display: grid;
-      gap: 24px;
+      gap: 18px;
+      align-items: stretch;
     }
 
     @media (min-width: 960px) {
@@ -227,9 +253,18 @@
       }
     }
 
-    .hero-text {
+    .hero-panel {
+      background: rgba(15, 23, 42, 0.96);
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      padding: 16px 16px 18px;
       display: flex;
       flex-direction: column;
+      height: 100%;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero-text {
       gap: 14px;
     }
 
@@ -240,9 +275,15 @@
     }
 
     .hero-title {
-      font-size: 24px;
+      font-family: "Peyda", "IRANYekan","Satoshi", sans-serif;
       font-weight: 800;
-      line-height: 1.6;
+      font-size: 26px;
+      line-height: 1.5;
+      letter-spacing: -0.8px;
+      background: linear-gradient(135deg, #a703d8, #8400ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-top: 4px;
     }
 
     .hero-subtitle {
@@ -322,20 +363,23 @@
 
     /* HERO RIGHT (CEO) */
 
+    .ceo-panel {
+      gap: 10px;
+    }
+
     .ceo-block {
       position: relative;
-      border-radius: 20px;
+      border-radius: 18px;
       overflow: hidden;
       background: radial-gradient(circle at top, rgba(79, 70, 229, 0.5), rgba(15, 23, 42, 0.98));
       border: 1px solid rgba(129, 140, 248, 0.4);
-      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
-      min-height: 340px;
+      min-height: 280px;
+      flex: 1;
     }
 
     .ceo-img {
       width: 100%;
       height: 100%;
-      max-height: 420px;
       object-fit: cover;
       display: block;
       filter: saturate(1.05);
@@ -345,8 +389,8 @@
       position: absolute;
       inset-inline: 10px;
       bottom: 10px;
-      padding: 12px 14px;
-      border-radius: 16px;
+      padding: 10px 12px;
+      border-radius: 14px;
       background: rgba(15, 23, 42, 0.85);
       border: 1px solid rgba(148, 163, 184, 0.45);
       backdrop-filter: blur(16px);
@@ -363,33 +407,10 @@
       margin-top: 2px;
     }
 
-    .ceo-quote {
-      margin-top: 6px;
-      font-size: 11px;
-      color: #e5e7eb;
-    }
-
-    .audio-btn {
-      border: none;
-      background: rgba(15, 23, 42, 0.8);
-      border-radius: 999px;
-      padding: 7px 13px;
-      color: #e5e7eb;
+    .ceo-bio {
       font-size: 12px;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      cursor: pointer;
-      border: 1px solid rgba(148, 163, 184, 0.55);
-      margin-top: 6px;
-    }
-
-    .audio-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: #22c55e;
-      box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.25);
+      color: var(--text-muted);
+      line-height: 1.8;
     }
 
     /* TAG STRIP */
@@ -570,7 +591,8 @@
       }
       .header-right {
         width: 100%;
-        justify-content: space-between;
+        justify-content: flex-end;
+        flex-wrap: wrap;
       }
     }
   </style>
@@ -595,6 +617,10 @@
           <span class="pill-dot"></span>
           <span data-i18n="company.status"></span>
         </div>
+
+        <!-- 🎧 دکمه موسیقی در هدر -->
+        <button id="audioControl" class="audio-pill" type="button">🎧</button>
+
         <div class="lang-switch">
           <button class="lang-btn active" data-lang="fa">فا</button>
           <button class="lang-btn" data-lang="en">EN</button>
@@ -604,7 +630,7 @@
 
     <!-- HERO -->
     <section id="hero">
-      <div class="hero-text">
+      <div class="hero-panel hero-text">
         <p class="hero-poem" data-i18n="poem"></p>
         <h1 class="hero-title" data-i18n="hero.title"></h1>
         <p class="hero-subtitle" data-i18n="hero.subtitle"></p>
@@ -616,7 +642,12 @@
         </div>
 
         <div class="hero-actions">
-          <button class="btn-primary" type="button" data-i18n="hero.cta.primary"></button>
+          <button
+            class="btn-primary"
+            type="button"
+            onclick="scrollToSection('about')"
+            data-i18n="hero.cta.primary"
+          ></button>
           <div class="btn-ghost" data-i18n="hero.cta.secondary"></div>
         </div>
 
@@ -636,22 +667,20 @@
         </div>
       </div>
 
-      <aside class="ceo-block">
-        <!-- عکس مدیرعامل را اینجا بگذار -->
-        <img class="ceo-img" src="imagesceo.jpg" alt="CEO">
-        <div class="ceo-overlay">
-          <div class="ceo-name" data-i18n="ceo.name"></div>
-          <div class="ceo-role" data-i18n="ceo.role"></div>
-          <p class="ceo-quote" data-i18n="ceo.quote"></p>
-          <button class="audio-btn" id="audioControl" type="button">
-            <span class="audio-dot"></span>
-            <span data-i18n="audio.label.play"></span>
-          </button>
+      <aside class="hero-panel ceo-panel">
+        <div class="ceo-block">
+          <!-- عکس مدیرعامل را اینجا بگذار -->
+          <img class="ceo-img" src="imagesceo.jpg" alt="CEO">
+          <div class="ceo-overlay">
+            <div class="ceo-name" data-i18n="ceo.name"></div>
+            <div class="ceo-role" data-i18n="ceo.role"></div>
+          </div>
         </div>
+        <div class="ceo-bio" data-i18n="ceo.bio"></div>
       </aside>
     </section>
 
-    <!-- ABOUT -->
+    <!-- ABOUT / DOMAINS -->
     <section id="about">
       <div class="section-header">
         <div>
@@ -690,6 +719,32 @@
             <ul class="card-list" data-i18n-list="domains.tech.items"></ul>
           </article>
         </div>
+      </div>
+    </section>
+
+    <!-- APPROACH -->
+    <section id="approach">
+      <div class="section-header">
+        <div>
+          <div class="section-kicker" data-i18n="approach.kicker"></div>
+          <h2 class="section-title" data-i18n="approach.title"></h2>
+        </div>
+        <div class="section-subtitle" data-i18n="approach.subtitle"></div>
+      </div>
+
+      <div class="cards-grid">
+        <article class="card">
+          <div class="card-title" data-i18n="approach.step1.title"></div>
+          <div class="card-body" data-i18n="approach.step1.body"></div>
+        </article>
+        <article class="card">
+          <div class="card-title" data-i18n="approach.step2.title"></div>
+          <div class="card-body" data-i18n="approach.step2.body"></div>
+        </article>
+        <article class="card">
+          <div class="card-title" data-i18n="approach.step3.title"></div>
+          <div class="card-body" data-i18n="approach.step3.body"></div>
+        </article>
       </div>
     </section>
 
@@ -791,6 +846,7 @@
 
       <div class="section-body">
         <p data-i18n="contact.lead"></p>
+        <p data-i18n="contact.joinNote"></p>
       </div>
 
       <div class="footer">
@@ -805,25 +861,25 @@
   </div>
 
   <script>
-    /* ========== TEXT CONTENT (FA/EN) – فقط این را ویرایش کن ========== */
+    /* ========== TEXT CONTENT (FA/EN) ========== */
     const content = {
       fa: {
         company: {
           name: "شرکت پیشگامان دنیای نوین رایکا",
-          tagline: "رسانه و برنامه‌نویسی در خدمت هویت‌سازی برند",
+          tagline: "هویت، فقط یک لوگو نیست؛ یک تجربه است. ما آن را می‌سازیم",
           status: "فعال در دو حوزه رسانه و برنامه‌نویسی با تمرکز بر هویت برند"
         },
         poem:
           "ما از تار و پود روایت آمده‌ایم؛ از روشنای قاب‌ها و منطق کدها؛ رایکا، جایی‌ست که صدا و تصویر، با فکر و فناوری، هویت می‌سازند.",
         hero: {
-          title: "ساخت هویت حرفه‌ای برای برندها با ترکیب رسانه و برنامه‌نویسی",
+          title: "رایکا؛ هنر روایت، قدرت تصویر، منطق فناوری",
           subtitle:
-            "رایکا در دو حوزه اصلی رسانه و برنامه‌نویسی فعالیت می‌کند؛ دو شاخه‌ای که زیرمجموعه هویت‌سازی و برندسازی هستند. هدف ما، ساختن هویتی منسجم و حرفه‌ای برای برندهاست؛ از تصویر و روایت تا زیرساخت نرم‌افزاری.",
+            "در رایکا، هویت هر برند از دل سه جهان شکل می‌گیرد؛ جهان روایت که معنا می‌سازد، جهان تصویر که دیده شدن را ممکن می‌کند، و جهان فناوری که مسیر رشد، ماندگاری و حرفه‌ای دیده شدن را تضمین می‌کند. ما در کنار مجموعه‌ها ایستاده‌ایم تا از ترکیب رسانه و برنامه‌نویسی، هویتی یکپارچه، قابل اعتماد و آینده‌محور برای برندشان خلق کنیم.",
           tag1: "هویت‌سازی و برندسازی",
           tag2: "رسانه، گویندگی و تولید محتوا",
           tag3: "برنامه‌نویسی و راهکارهای دیجیتال",
           cta: {
-            prry: "مشاهده مسیر و توانمندی‌های رایکا",
+            primary: "مشاهده توانمندی‌ها و حوزه‌های فعالیت رایکا",
             secondary: "ترکیب رسانه و کد؛ برای ساختن هویت برند شما"
           }
         },
@@ -840,33 +896,30 @@
             label: "حوزه‌های اصلی فعالیت",
             value: "۲"
           }
+          
         },
+        
         ceo: {
           name: "محمد صالح نکوئی سامانی",
           role: "Founder & CEO – Media & Tech Strategist",
-          quote: "ما فقط یک شرکت نمی‌سازیم؛ ما آینده‌ی برندها را معماری می‌کنیم."
-        },
-        audio: {
-          label: {
-            play: "پخش موسیقی آرام",
-            pause: "توقف موسیقی"
-          }
+          bio:
+            "من، محمد صالح نکوئی سامانی، به عنوان بنیان‌گذار و مدیرعامل رایکا، مسیر کاری خودم را از دل رسانه آغاز کردم و با ورود به دنیای برنامه‌نویسی ، تلاش کرده‌ام پلی میان روایت، تصویر و کد بسازم. رایکا برای من فقط یک شرکت نیست؛ یک خانه هویت‌سازی است که در آن با کمک تیمی جوان و متخصص، برای برندها آینده‌ای روشن، منسجم و قابل اعتماد طراحی می‌کنیم."
         },
         about: {
           kicker: "ABOUT RAIKA",
           title: "داستان شکل‌گیری و هویت رایکا",
           subtitle: "رسانه و برنامه‌نویسی؛ دو شاخه زیر یک درخت به نام برند",
           lead:
-            "پیشگامان دنیای نوین رایکا نتیجه چهار سال تجربه میدانی در رسانه، آموزش گویندگی، تولید محتوا، پوشش رویدادهای ملی و توسعه نرم‌افزار است؛ مسیری که سه بار با شکست متوقف شد، اما هر بار با ساختاری قوی‌تر و هدفی روشن‌تر دوباره آغاز شد.",
+            "پیشگامان دنیای نوین رایکا نتیجه چهار سال تجربه میدانی در رسانه، آموزش گویندگی، تولید محتوا، پوشش رویدادهای ملی و توسعه نرم‌افزار است؛ مسیری که سه بار با توقف و شروع دوباره همراه شد، اما هر بار با ساختاری قوی‌تر و هدفی روشن‌تر ادامه پیدا کرد.",
           story1:
-            "رایکا کار خود را به عنوان یک مجموعه رسانه‌ای در حوزه گویندگی و اجرا شروع کرد. حضور اساتید مطرحی چون جمال‌الدین خدابخش و سرکار خانم علائی، سطح آموزشی مجموعه را به استانداردهای حرفه‌ای رساند و خروجی این دوره‌ها، تربیت گویندگانی بود که امروز در صداوسیما و رسانه‌های رسمی کشور دیده می‌شوند.",
+            "رایکا کار خود را به عنوان یک مجموعه رسانه‌ای در حوزه گویندگی و اجرا شروع کرد. حضور اساتیدی چون جمال‌الدین خدابخش و سرکار خانم علائی از مجریان صداوسیما، سطح آموزشی مجموعه را به استانداردهای حرفه‌ای رساند و خروجی این دوره‌ها، تربیت گویندگانی بود که امروز در صداوسیما و رسانه‌های رسمی کشور دیده می‌شوند.",
           story2:
             "در ادامه، بخش رسانه‌ای رایکا با پروژه‌هایی مثل معرفی غرفه‌های کتاب‌شهر شهرکرد در ایام محرم، پوشش رسانه‌ای رویداد ملی قیام با حضور سردار جعفری، پوشش مسابقات ورزشی دانش‌آموزی، پویش‌ها، گزارش‌های خبری، تولید محتوایی که از شبکه خبر پخش شد و همکاری با دانشگاه اصفهان و مجموعه‌های آموزشی، تبدیل به یک بازوی رسانه‌ای قابل اعتماد شد.",
           story3:
             "سپس، با شکل‌گیری تیم برنامه‌نویسی جوان و متخصص و عقد قرارداد نرم‌افزاری با شرکت سنرست (یکی از بزرگ‌ترین تولیدکنندگان پروتز و ارتز کشور با بیش از ۲۵۰ کلینیک طرف قرارداد)، رایکا وارد حوزه راهکارهای دیجیتال شد. امروز، این دو حوزه – رسانه و برنامه‌نویسی – در کنار هم، زیر چتر هویت‌سازی و برندسازی برای مجموعه‌ها فعالیت می‌کنند.",
           tag1: "هویت‌سازی بر پایه تجربه واقعی",
           tag2: "رسانه + برنامه‌نویسی = برند",
-          tag3: "تمرکز روی برندهای آینده‌نگر"
+          tag3: "تمرکز بر برندهای آینده‌نگر"
         },
         domains: {
           identity: {
@@ -902,6 +955,26 @@
               "راهکارهای نرم‌افزاری برای مجموعه‌ها و کلینیک‌ها",
               "اتوماسیون و دیجیتال‌سازی فرایندهای داخلی برند"
             ]
+          }
+        },
+        approach: {
+          kicker: "APPROACH",
+          title: "روش کار رایکا با برندها",
+          subtitle: "از شناخت برند تا ساخت هویت و اجرای یکپارچه",
+          step1: {
+            title: "۱. شناخت و تعریف هویت",
+            body:
+              "در گام اول، برند، مخاطب، اهداف و وضعیت فعلی مجموعه را دقیق بررسی می‌کنیم. هویت مطلوب برند، شخصیت و جایگاه آن را به زبان ساده و شفاف تعریف می‌کنیم."
+          },
+          step2: {
+            title: "۲. طراحی مسیر رسانه‌ای و دیجیتال",
+            body:
+              "در گام دوم، براساس هویت تعریف‌شده، ترکیب رسانه و برنامه‌نویسی را طراحی می‌کنیم؛ از روایت و محتوا تا ابزارهای نرم‌افزاری و بسترهایی که برند باید در آن حاضر باشد."
+          },
+          step3: {
+            title: "۳. اجرا، اندازه‌گیری و توسعه",
+            body:
+              "در گام سوم، وارد اجرای رسانه‌ای و فنی می‌شویم، خروجی‌ها را می‌سنجیم، بازخورد می‌گیریم و براساس نتایج، استراتژی و هویت برند را دائماً به‌روز و قوی‌تر می‌کنیم."
           }
         },
         journey: {
@@ -982,9 +1055,11 @@
           subtitle: "شروع هویت جدید برند شما از یک گفت‌وگو",
           lead:
             "برای مشاوره هویت‌سازی، همکاری رسانه‌ای یا توسعه نرم‌افزار، می‌توانید با ما در تماس باشید. رایکا آماده است تا در کنار شما، هویت حرفه‌ای برندتان را طراحی و تقویت کند.",
-          email: "ایمیل: info@raikaco.ir",
-          phone: "تلفن: ۰۹۱۲۱۲۳۴۵۶۷ (نمونه)",
-          location: "موقعیت: ایران – شهر خود را اینجا بنویسید",
+          joinNote:
+            "جهت همکاری با ما و عضویت در مجموعه می‌توانید با کلیک بر آیکون سمت راست صفحه، فرم درخواست عضویت را ارسال کنید.",
+          email: "ایمیل: teamraikamedia@gmail.com",
+          phone: "شماره: 09224068878 (نکوئی)",
+          location: "موقعیت: ایران - اصفهان",
           footerNote:
             "این پروفایل آنلاین برای معرفی هویت و توانمندی‌های شرکت پیشگامان دنیای نوین رایکا تهیه شده است."
         }
@@ -999,15 +1074,14 @@
         poem:
           "We come from the fabric of stories; from bright frames and logical code. Raika is where sound and image meet strategy and technology to build identity.",
         hero: {
-          title:
-            "Building professional brand identities through media and software",
+          title: "Raika — Where Brands Evolve into Identity, Story and Technology.",
           subtitle:
-            "Raika operates in two main domains: media and software development. Both are branches under our core mission: creating strong, coherent identities for brands – from narrative and visuals to digital infrastructure.",
+            "At Raika, every brand’s identity is forged at the intersection of three worlds: the world of narrative, where meaning is born; the world of imagery, where visibility and emotion take shape; and the world of technology, where growth, precision and long-term impact become possible. We stand beside organizations to craft a unified, trustworthy and future-oriented identity, built through the seamless fusion of media and software.",
           tag1: "Brand identity & strategy",
           tag2: "Media, voice-over & content",
           tag3: "Software & digital solutions",
           cta: {
-            primary: "Explore Raika’s journey & capabilities",
+            primary: "Explore Raika’s capabilities and domains",
             secondary: "Media plus code – to shape your brand identity"
           }
         },
@@ -1028,13 +1102,8 @@
         ceo: {
           name: "Mohammad Saleh Nekoei Samani",
           role: "Founder & CEO – Media & Tech Strategist",
-          quote: "We don’t just build a company; we architect the future of brands."
-        },
-        audio: {
-          label: {
-            play: "Play calm background music",
-            pause: "Pause music"
-          }
+          bio:
+            "I am Mohammad Saleh Nekoei Samani, founder and CEO of Raika. My path began in media and voice-over and grew alongside a deep interest in programming and technology. For me, Raika is not just a company; it is a lab for brand identity – where, together with a young and talented team, we design clear, coherent and trustworthy futures for brands."
         },
         about: {
           kicker: "ABOUT RAIKA",
@@ -1086,6 +1155,26 @@
               "Digital solutions for organizations and clinics",
               "Process automation and internal digitization"
             ]
+          }
+        },
+        approach: {
+          kicker: "APPROACH",
+          title: "How we work with brands",
+          subtitle: "From understanding your brand to building and executing identity",
+          step1: {
+            title: "1. Understanding & defining identity",
+            body:
+              "We begin by analyzing the brand, its audience, goals and current state. Together we define a clear, simple and realistic identity for the brand."
+          },
+          step2: {
+            title: "2. Designing media & digital paths",
+            body:
+              "Next, we design how media and software should work together: from stories and content to platforms, tools and infrastructure where the brand should appear."
+          },
+          step3: {
+            title: "3. Execution, measurement & evolution",
+            body:
+              "Finally, we execute media and technical work, measure the outcomes, gather feedback and continuously refine both strategy and brand identity."
           }
         },
         journey: {
@@ -1171,16 +1260,18 @@
           subtitle: "A new brand identity starts with a conversation",
           lead:
             "For brand identity consulting, media collaborations or software projects, feel free to reach out. Raika is ready to help you design and strengthen your brand’s presence.",
-          email: "Email: info@raikaco.ir",
-          phone: "Phone: +98 912 123 4567 (sample)",
-          location: "Location: Iran – set your city here",
+          joinNote:
+            "To collaborate with us or apply to join the team, you will soon be able to click the floating icon on the right side of the screen to submit your request form.",
+          email: "Email: teamraikamedia@gmail.com",
+          phone: "Phone: +98 922 406 8878 (Nekoei)",
+          location: "Location: Iran – Isfahan",
           footerNote:
-            "This online profile is prepared to present the identity and capabilities of Raika – Pioneers of the New World."
+            "This online profile presents the identity and capabilities of Raika – Pioneers of the New World."
         }
       }
     };
 
-    /* ========== RENDERING LOGIC ========== */
+    /* ========== HELPERS & RENDERING ========== */
 
     function getNested(obj, path) {
       return path.split(".").reduce((o, k) => (o && o[k] !== undefined ? o[k] : undefined), obj);
@@ -1236,18 +1327,20 @@
         });
       }
 
-      // Audio button label
-      const audioBtn = document.getElementById("audioControl");
-      const audio = document.getElementById("bgMusic");
-      if (audioBtn && audio) {
-        audioBtn.querySelector("span:nth-child(2)").textContent =
-          audio.paused ? getNested(dict, "audio.label.play") : getNested(dict, "audio.label.pause");
-      }
-
       // Update lang buttons
       document.querySelectorAll(".lang-btn").forEach((btn) => {
         btn.classList.toggle("active", btn.getAttribute("data-lang") === lang);
       });
+    }
+
+    function scrollToSection(id) {
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }
     }
 
     document.addEventListener("DOMContentLoaded", () => {
@@ -1265,22 +1358,22 @@
       // Audio toggle
       const audio = document.getElementById("bgMusic");
       const audioBtn = document.getElementById("audioControl");
-      audioBtn.addEventListener("click", () => {
-        const lang = document.body.classList.contains("lang-en") ? "en" : "fa";
-        const dict = content[lang];
-        if (audio.paused) {
-          audio.volume = 0.35;
-          audio.play();
-          audioBtn.querySelector("span:nth-child(2)").textContent = getNested(dict, "audio.label.pause");
-        } else {
-          audio.pause();
-          audioBtn.querySelector("span:nth-child(2)").textContent = getNested(dict, "audio.label.play");
-        }
-      });
+      if (audio && audioBtn) {
+        audioBtn.addEventListener("click", () => {
+          if (audio.paused) {
+            audio.volume = 0.35;
+            audio.play();
+            audioBtn.textContent = "⏸";
+          } else {
+            audio.pause();
+            audioBtn.textContent = "🎧";
+          }
+        });
+      }
     });
   </script>
 </body>
 </html>
-
-
-
+<!--START---- FormAfzar.Com ----->
+<script type="text/javascript" src="https://formafzar.com/pages/formbuilder/ravesh-formbuilder.js" form-url="https://formafzar.com/form/u2b4c" form-style="fab" form-link-text="مشاهده فرم" form-button-color="#3f51b5" form-button-icon="https://formafzar.com/pages/formbuilder/images/send-icon.png" form-theme=""></script>
+<!--END--- FormAfzar.Com ----->
